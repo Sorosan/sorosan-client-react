@@ -1,0 +1,47 @@
+{
+  "name": "@sorosan-client/react",
+  "license": "MIT",
+  "version": "0.0.2",
+  "author": "Sorosan",
+  "homepage": "https://github.com/sorosan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sorosan/sorosan-client-react"
+  },
+  "bugs": {
+    "url": "https://github.com/sorosan/sorosan-client-react/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "soroban",
+    "web3",
+    "stellar",
+    "sdk",
+    "typescript",
+    "react"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "playground": "npx ts-node test/main.ts",
+    "release": "pnpm run build && changeset publish",
+    "test": "vitest",
+    "lint": "tsc"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.39",
+    "ts-node": "^10.9.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2",
+    "vitest": "^0.34.6"
+  },
+  "dependencies": {
+    "@types/node": "^20.10.0",
+    "react": "^18.2.0",
+    "@sorosan-client/core": "^0.0.2"
+  }
+}
