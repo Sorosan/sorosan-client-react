@@ -5,6 +5,7 @@ import {
     DEFAULT_NETWORK,
     TESTNET_DETAILS,
     MAINNET_DETAILS,
+    FUTURENET_DETAILS,
     SorosanSDK
 } from "@sorosan-client/core";
 
@@ -15,7 +16,7 @@ import {
  * - "testnet"
  * - "custom"
  */
-export type networkType = "mainnet" | "testnet";
+export type networkType = "futurenet" | "mainnet" | "testnet";
 
 /**
  * A provider component that wraps your application with the Soroban SDK.
@@ -31,8 +32,12 @@ export const SorosanProvider = ({ children, network, name }: SorosanProviderProp
 
     useEffect(() => {
         // IMPORTANT: Currently only the futurenet and testnet is supported.
-        console.log("@sorosan-client/react: changing network to ", network);
+        // console.log("@sorosan-client/react: changing network to ", network);
         switch (network) {
+            case "futurenet":
+                setSelectedNetework(FUTURENET_DETAILS);
+                setSDK(new SorosanSDK(FUTURENET_DETAILS));
+                break;
             case "testnet":
                 setSelectedNetework(TESTNET_DETAILS);
                 setSDK(new SorosanSDK(TESTNET_DETAILS));
